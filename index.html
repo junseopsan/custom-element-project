@@ -1,31 +1,35 @@
 <!doctype html>
+<head>
+  <script src="./main.js"></script>
+  <style>
+    .flex{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .customElement div{
+      width: 250px;
+      height: 250px;
+    }
+    .flex div {
+      text-align: center;
+      width: 200px;
+      height: 200px;
+      border-radius: 20px;
+      border: 1px solid black;
+    }
+  </style>
+</head>
 <body>
-<script>
-class TimeFormatted extends HTMLElement { // (1)
-
-  connectedCallback() {
-    let date = new Date(this.getAttribute('datetime') || Date.now());
-
-    this.innerHTML = new Intl.DateTimeFormat("default", {
-      year: this.getAttribute('year') || undefined,
-      month: this.getAttribute('month') || undefined,
-      day: this.getAttribute('day') || undefined,
-      hour: this.getAttribute('hour') || undefined,
-      minute: this.getAttribute('minute') || undefined,
-      second: this.getAttribute('second') || undefined,
-      timeZoneName: this.getAttribute('time-zone-name') || undefined,
-    }).format(date);
-  }
-
-}
-
-customElements.define("time-formatted", TimeFormatted); // (2)
-</script>
-
-<!-- (3) -->
-<time-formatted datetime="2019-12-01"
-  year="numeric" month="long" day="numeric"
-  hour="numeric" minute="numeric" second="numeric"
-  time-zone-name="short"
-></time-formatted>
+  <div class="flex">
+    <div >
+      <h1>Custom Eelement Test</h1>
+      <custom-element>
+        Hi! Element
+      </custom-element>
+      <!-- <custom-element class="customElement"></custom-element>  -->
+    </div>
+    <!-- <input value="red" /> -->
+    <!-- <button class="update">Update attributes</button> -->
+  </div>
 </body>
