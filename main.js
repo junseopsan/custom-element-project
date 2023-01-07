@@ -38,21 +38,5 @@ class CustomElement extends HTMLElement {
         }
       }
     }
-  
-    adoptedCallback(oldDoc, newDoc) {
-      // 다른 Document에서 옮겨져 왔음
-      // 자주 쓸 일은 없을 것.
-    }
-
-    // gathering data from element attributes
-    get color() {
-        return this.getAttribute('color') || '';
-    }
-    // get setColor() {
-      
-    //     return this.setAttribute('color') || '';
-    // }
-  }
-  // <current-time> 태그가 CurrentTime 클래스를 사용하도록 한다.
-  customElements.define("custom-element", CustomElement);
-})();
+}
+customElements.define("custom-element", CustomElement);
