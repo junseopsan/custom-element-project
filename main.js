@@ -48,6 +48,7 @@ class CustomElement extends HTMLElement {
         return this.getAttribute('color') || '';
     }
     // get setColor() {
+      
     //     return this.setAttribute('color') || '';
     // }
   }
